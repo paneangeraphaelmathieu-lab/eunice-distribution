@@ -1,0 +1,1049 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eunice Distribution - Partenaire médical ivoirien</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-green: #2E8B57;
+            --secondary-yellow: #FFD700;
+            --accent-yellow-light: #FFF8DC;
+            --accent-green-dark: #1E6B47;
+            --text-dark: #333;
+            --text-light: #666;
+            --background-light: #f8f9fa;
+            --white: #ffffff;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--background-light);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            color: var(--primary-green);
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-green);
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--accent-green-dark) 100%);
+            color: var(--white);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--secondary-yellow);
+        }
+
+        .logo span {
+            font-size: 0.8rem;
+            opacity: 0.9;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+            .nav-links a {
+                font-weight: 500;
+                transition: var(--transition);
+                padding: 0.5rem 0;
+                position: relative;
+            }
+
+                .nav-links a:hover {
+                    color: var(--secondary-yellow);
+                }
+
+                .nav-links a::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 0;
+                    height: 2px;
+                    background-color: var(--secondary-yellow);
+                    transition: var(--transition);
+                }
+
+                .nav-links a:hover::after {
+                    width: 100%;
+                }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(46, 139, 87, 0.85), rgba(30, 107, 71, 0.9)), url('https://images.unsplash.com/photo-1551601651-2a8555f1a136?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+            color: var(--white);
+            text-align: center;
+            padding: 180px 0 100px;
+            margin-top: 70px;
+        }
+
+        .hero-content h2 {
+            font-size: 3rem;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--secondary-yellow);
+            color: var(--primary-green);
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            border: 2px solid var(--secondary-yellow);
+        }
+
+            .cta-button:hover {
+                background-color: transparent;
+                color: var(--secondary-yellow);
+                transform: translateY(-3px);
+                box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+            }
+
+        .about {
+            background-color: var(--white);
+        }
+
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-image {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .about-image-placeholder {
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--accent-green-dark) 100%);
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 8px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+            .about-image-placeholder i {
+                font-size: 4rem;
+                color: var(--secondary-yellow);
+            }
+
+        .about-content h2 {
+            text-align: left;
+        }
+
+        .about-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .info-card {
+            background-color: var(--accent-yellow-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-green);
+            transition: var(--transition);
+        }
+
+            .info-card:hover {
+                transform: translateY(-5px);
+                box-shadow: var(--shadow);
+            }
+
+            .info-card h3 {
+                font-size: 1.2rem;
+                margin-bottom: 0.5rem;
+                color: var(--primary-green);
+            }
+
+        .services {
+            background: linear-gradient(to bottom, var(--accent-yellow-light) 0%, var(--white) 100%);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background-color: var(--white);
+            padding: 2.5rem 2rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            border-top: 5px solid var(--primary-green);
+        }
+
+            .service-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--primary-green);
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            margin-bottom: 1rem;
+        }
+
+        .products {
+            background-color: var(--white);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background-color: var(--accent-yellow-light);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid var(--secondary-yellow);
+        }
+
+            .product-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            }
+
+        .product-image {
+            height: 200px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--accent-green-dark) 100%);
+            color: white;
+            font-size: 3rem;
+        }
+
+        .product-content {
+            padding: 1.5rem;
+        }
+
+            .product-content h3 {
+                margin-bottom: 0.5rem;
+            }
+
+        .testimonials {
+            background: linear-gradient(to bottom, var(--white) 0%, var(--accent-yellow-light) 100%);
+            padding: 80px 0;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            border-left: 4px solid var(--primary-green);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+            .testimonial-text::before {
+                content: """; font-size: 3rem;
+                color: var(--secondary-yellow);
+                position: absolute;
+                top: -20px;
+                left: -10px;
+                opacity: 0.3;
+            }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--primary-green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .contact {
+            background: linear-gradient(to bottom, var(--white) 0%, var(--accent-yellow-light) 100%);
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info {
+            background-color: var(--white);
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            border-top: 5px solid var(--primary-green);
+        }
+
+            .contact-info h2 {
+                text-align: left;
+                margin-bottom: 2rem;
+            }
+
+        .contact-details {
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-icon {
+            font-size: 1.2rem;
+            color: var(--primary-green);
+            margin-right: 1rem;
+            min-width: 20px;
+        }
+
+        .contact-form {
+            background-color: var(--white);
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            border-top: 5px solid var(--secondary-yellow);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--primary-green);
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+            input:focus, select:focus, textarea:focus {
+                outline: none;
+                border-color: var(--primary-green);
+                box-shadow: 0 0 0 2px rgba(46, 139, 87, 0.2);
+            }
+
+        .submit-btn {
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--accent-green-dark) 100%);
+            color: var(--white);
+            border: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            width: 100%;
+        }
+
+            .submit-btn:hover {
+                background: linear-gradient(135deg, var(--accent-green-dark) 0%, var(--primary-green) 100%);
+                transform: translateY(-2px);
+                box-shadow: 0 5px 15px rgba(46, 139, 87, 0.3);
+            }
+
+        footer {
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--accent-green-dark) 100%);
+            color: var(--white);
+            padding: 3rem 0 1.5rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 200px;
+        }
+
+            .footer-column h3 {
+                color: var(--secondary-yellow);
+                margin-bottom: 1.5rem;
+                font-size: 1.2rem;
+            }
+
+            .footer-column ul li {
+                margin-bottom: 0.8rem;
+            }
+
+            .footer-column a:hover {
+                color: var(--secondary-yellow);
+            }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+            .social-links a {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 40px;
+                height: 40px;
+                background-color: rgba(255, 255, 255, 0.1);
+                border-radius: 50%;
+                transition: var(--transition);
+            }
+
+                .social-links a:hover {
+                    background-color: var(--secondary-yellow);
+                    color: var(--primary-green);
+                    transform: translateY(-3px);
+                }
+
+        .copyright {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .partners {
+            background-color: var(--white);
+            padding: 60px 0;
+        }
+
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        .partner-logo {
+            background-color: var(--accent-yellow-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: var(--primary-green);
+            border: 2px solid var(--secondary-yellow);
+        }
+
+        @media (max-width: 992px) {
+            h2 {
+                font-size: 2rem;
+            }
+
+            .hero-content h2 {
+                font-size: 2.5rem;
+            }
+
+            .about-container, .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: linear-gradient(135deg, var(--primary-green) 0%, var(--accent-green-dark) 100%);
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 2rem;
+                transition: var(--transition);
+            }
+
+                .nav-links.active {
+                    left: 0;
+                }
+
+                .nav-links li {
+                    margin-bottom: 1.5rem;
+                }
+
+            .hero {
+                padding: 150px 0 80px;
+            }
+
+            .hero-content h2 {
+                font-size: 2rem;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                width: 95%;
+            }
+
+            .service-card, .product-card {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <h1>EUNICE DISTRIBUTION</h1>
+                    <span>Expert en fournitures médicales en Côte d'Ivoire</span>
+                </div>
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#apropos">À Propos</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#produits">Produits</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="accueil">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Eunice Distribution</h2>
+                <p>Votre partenaire de confiance pour les équipements médicaux et les fournitures de laboratoire en Côte d'Ivoire depuis 2008</p>
+                <a href="#contact" class="cta-button">Demander un devis</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="apropos">
+        <div class="container">
+            <div class="about-container">
+                <div class="about-image">
+                    <div class="about-image-placeholder">
+                        <i class="fas fa-hospital"></i>
+                        <h3>Eunice Distribution</h3>
+                        <p>Fournisseur officiel des établissements de santé ivoiriens</p>
+                        <div style="margin-top: 1rem; font-size: 0.9rem;">
+                            <p><strong>Contact : 22 52 24 09</strong></p>
+                            <p>Abidjan Cocody, Il pitz, Perles 1</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <h2>À Propos de Notre Entreprise</h2>
+                    <p>Fondée en 2008, <strong>Eunice Distribution</strong> (E.D) est une entreprise ivoirienne de référence spécialisée dans la fourniture d'équipements médicaux, de réactifs de laboratoire, et de consommables pour les établissements de santé en Côte d'Ivoire.</p>
+                    <p>Avec un capital social de 5 000 000 F CFA, nous nous engageons à fournir des produits de qualité répondant aux normes internationales pour soutenir le système de santé ivoirien.</p>
+
+                    <div class="info-grid">
+                        <div class="info-card">
+                            <h3><i class="fas fa-map-marker-alt"></i> Siège Social</h3>
+                            <p>Abidjan Cocody, Il pitz, Perles 1, villa 22<br>02 BP 324 Abidjan 02</p>
+                        </div>
+                        <div class="info-card">
+                            <h3><i class="fas fa-user-tie"></i> Gérant</h3>
+                            <p>Monsieur YAPO Janvier Basile</p>
+                        </div>
+                        <div class="info-card">
+                            <h3><i class="fas fa-id-card"></i> RCCM</h3>
+                            <p>N° CI-ABJ-2008-N-6653</p>
+                        </div>
+                        <div class="info-card">
+                            <h3><i class="fas fa-file-contract"></i> Dépôt Greffe</h3>
+                            <p>N° CI-ABJ-08-M-13145</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="container">
+            <h2>Nos Services en Côte d'Ivoire</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <h3>Équipements de Laboratoire</h3>
+                    <p>Fourniture d'appareils et instruments de laboratoire pour les CHU, hôpitaux et laboratoires privés en Côte d'Ivoire.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-vial"></i>
+                    </div>
+                    <h3>Réactifs et Consommables</h3>
+                    <p>Distribution de réactifs chimiques, milieux de culture et consommables stériles pour analyses médicales.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-procedures"></i>
+                    </div>
+                    <h3>Matériel Médical</h3>
+                    <p>Équipements hospitaliers et matériel de diagnostic pour les centres de santé ivoiriens.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Maintenance et Support</h3>
+                    <p>Service après-vente et maintenance de tous nos équipements sur tout le territoire ivoirien.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Formation</h3>
+                    <p>Formation du personnel médical et technique à l'utilisation de nos équipements.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h3>Livraison Partout en Côte d'Ivoire</h3>
+                    <p>Service de livraison dans toutes les régions : Abidjan, Bouaké, Daloa, Korhogo, etc.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="products" id="produits">
+        <div class="container">
+            <h2>Nos Produits Médicaux</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3>Équipements de Laboratoire</h3>
+                        <p>Centrifugeuses, microscopes, automates d'analyse, spectrophotomètres et matériel de paillasse pour laboratoires ivoiriens.</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <i class="fas fa-vial"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3>Réactifs de Diagnostic</h3>
+                        <p>Tests rapides, kits de diagnostic, analyseurs biochimiques et hématologiques pour les centres de santé.</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <i class="fas fa-syringe"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3>Consommables Médicaux</h3>
+                        <p>Seringues, gants, masques, compresses, dispositifs médicaux à usage unique pour hôpitaux et cliniques.</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <i class="fas fa-bed"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3>Mobilier Hospitalier</h3>
+                        <p>Lits médicalisés, tables d'opération, chariots et armoires de rangement médical adaptés aux besoins locaux.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <h2>Témoignages de Nos Clients en Côte d'Ivoire</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "Eunice Distribution nous fournit en réactifs et consommables depuis 5 ans. Leur professionnalisme et la qualité de leurs produits sont exceptionnels. Un partenaire fiable pour le CHU de Cocody."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">DR</div>
+                        <div>
+                            <strong>Dr. Kouamé</strong>
+                            <p>CHU de Cocody, Abidjan</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "La maintenance de nos équipements de laboratoire est assurée avec compétence par leur équipe technique. Service rapide et efficace dans tout Abidjan."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">ML</div>
+                        <div>
+                            <strong>M. Laurent</strong>
+                            <p>Laboratoire Pasteur, Abidjan</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "Excellente réactivité pour les commandes urgentes. Produits conformes aux normes et documentation technique complète. Partenaire de choix pour la Polyclinique Internationale."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AK</div>
+                        <div>
+                            <strong>Mme. Koné</strong>
+                            <p>Polyclinique Internationale</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="partners">
+        <div class="container">
+            <h2>Nos Partenaires en Côte d'Ivoire</h2>
+            <div class="partners-grid">
+                <div class="partner-logo">CHU de Cocody</div>
+                <div class="partner-logo">Institut Pasteur</div>
+                <div class="partner-logo">CHU de Treichville</div>
+                <div class="partner-logo">Hôpital Général</div>
+                <div class="partner-logo">Laboratoires Privés</div>
+                <div class="partner-logo">Cliniques</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Contactez-Nous en Côte d'Ivoire</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h2>Coordonnées en Côte d'Ivoire</h2>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h3>Adresse</h3>
+                                <p>Abidjan Cocody, Il pitz, Perles 1, villa 22<br>02 BP 324 Abidjan 02</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h3>Téléphone</h3>
+                                <p>22 52 24 09</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h3>Email</h3>
+                                <p>contact@eunicedistribution.ci</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h3>Horaires d'ouverture</h3>
+                                <p>Lundi - Vendredi: 8h00 - 18h00<br>Samedi: 9h00 - 13h00</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-truck"></i>
+                            </div>
+                            <div>
+                                <h3>Zone de Livraison</h3>
+                                <p>Abidjan et toute la Côte d'Ivoire</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h2>Demande de Devis</h2>
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Nom complet</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Téléphone</label>
+                            <input type="tel" id="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="establishment">Établissement</label>
+                            <input type="text" id="establishment" required placeholder="Nom de votre hôpital/clinique/laboratoire">
+                        </div>
+                        <div class="form-group">
+                            <label for="city">Ville</label>
+                            <select id="city" required>
+                                <option value="">Sélectionnez votre ville</option>
+                                <option value="abidjan">Abidjan</option>
+                                <option value="bouake">Bouaké</option>
+                                <option value="daloa">Daloa</option>
+                                <option value="korhogo">Korhogo</option>
+                                <option value="yamoussoukro">Yamoussoukro</option>
+                                <option value="sanpedro">San Pedro</option>
+                                <option value="autre">Autre ville</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="product-interest">Produit(s) d'intérêt</label>
+                            <select id="product-interest" required>
+                                <option value="">Sélectionnez un produit</option>
+                                <option value="laboratoire">Équipements de laboratoire</option>
+                                <option value="diagnostic">Diagnostic médical</option>
+                                <option value="consommables">Consommables médicaux</option>
+                                <option value="mobilier">Mobilier hospitalier</option>
+                                <option value="reactifs">Réactifs et consommables labo</option>
+                                <option value="autre">Autre</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message / Demande spécifique</label>
+                            <textarea id="message" rows="5" required placeholder="Décrivez vos besoins..."></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Envoyer la demande</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>EUNICE DISTRIBUTION</h3>
+                    <p>Votre partenaire de confiance pour les fournitures médicales et de laboratoire en Côte d'Ivoire depuis 2008.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Liens Rapides</h3>
+                    <ul>
+                        <li><a href="#accueil">Accueil</a></li>
+                        <li><a href="#apropos">À Propos</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#produits">Produits</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Nos Services</h3>
+                    <ul>
+                        <li><a href="#">Équipements de Laboratoire</a></li>
+                        <li><a href="#">Diagnostic Médical</a></li>
+                        <li><a href="#">Consommables Médicaux</a></li>
+                        <li><a href="#">Maintenance et Support</a></li>
+                        <li><a href="#">Formation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Côte d'Ivoire</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Cocody, Il pitz, Perles 1, villa 22</li>
+                        <li><i class="fas fa-phone"></i> 22 52 24 09</li>
+                        <li><i class="fas fa-envelope"></i> contact@eunicedistribution.ci</li>
+                        <li><i class="fas fa-clock"></i> Lun-Ven: 8h-18h, Sam: 9h-13h</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Eunice Distribution (E.D). Tous droits réservés. | Capital: 5 000 000 F CFA | RCCM: CI-ABJ-2008-N-6653 | Entreprise 100% Ivoirienne</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.nav-links').classList.remove('active');
+            });
+        });
+
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.backgroundColor = 'rgba(46, 139, 87, 0.95)';
+            } else {
+                header.style.background = 'linear-gradient(135deg, var(--primary-green) 0%, var(--accent-green-dark) 100%)';
+            }
+        });
+
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Merci pour votre demande! Nous vous contacterons dans les plus brefs délais.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
